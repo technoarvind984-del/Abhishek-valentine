@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚠️ System Warning</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: black;
+    color: red;
+    text-align: center;
+}
+
+button {
+    padding: 14px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#warning {
+    padding-top: 120px;
+}
+
+#proposal {
+    display: none;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+    height: 100vh;
+    color: white;
+    padding-top: 80px;
+}
+
+#yesBtn {
+    background: white;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+#noBtn {
+    background: black;
+    color: white;
+    position: absolute;
+}
+
+iframe {
+    margin-top: 30px;
+    border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- WARNING SCREEN -->
+<div id="warning">
+    <h1>⚠️ WARNING ⚠️</h1>
+    <p>This link may steal your heart ❤️</p>
+    <p>Proceed only if you trust Abhishek 😏</p>
+    <button onclick="openProposal()">OPEN ANYWAY</button>
+</div>
+
+<!-- PROPOSAL SCREEN -->
+<div id="proposal">
+    <h1>❤️ Hey Love ❤️</h1>
+    <h2>Will you be my Valentine?</h2>
+    <p>— From Abhishek 💌</p>
+
+    <br>
+    <button id="yesBtn" onclick="yesClicked()">YES 💖</button>
+    <button id="noBtn" onmouseover="moveNo()">NO 😜</button>
+
+    <br><br>
+
+    <!-- Ed Sheeran - Perfect -->
+    <iframe width="320" height="180"
+    src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&mute=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+    </iframe>
+
+    <p style="font-size:14px;">(Unmute for magic ✨)</p>
+</div>
+
+<script>
+function openProposal() {
+    document.getElementById("warning").style.display = "none";
+    document.getElementById("proposal").style.display = "block";
+}
+
+function moveNo() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+function yesClicked() {
+    document.body.innerHTML = `
+    <div style="background:#ff4d6d;height:100vh;color:white;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <h1>😍 She said YES! 😍</h1>
+        <h2>Happy Valentine’s Day 💖</h2>
+        <p>Forever yours,<br><b>Abhishek</b></p>
+    </div>`;
+}
+</script>
+
+</body>
+</html>
